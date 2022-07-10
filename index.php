@@ -7,6 +7,15 @@ $a3 = 1;
 $b3 = 0;
 $a4 = 1;
 $b4 = 1;
+
+$c1 = true;
+$c2 = false;
+$c3 = 1;
+$c4 = 0;
+$c5 = -1;
+$c6 = "1";
+$c7 = null;
+$c8 = "php";
 ?>
 
 
@@ -19,6 +28,10 @@ $b4 = 1;
 </head>
 <link rel="stylesheet" href="style.css" type="text/css"/>
 <body>
+    <div class="title">
+        <h2>Таблица истинности PHP</h2>
+    </div>
+
     <table>
         <thead>
             <tr>
@@ -46,37 +59,42 @@ $b4 = 1;
             <tr>
                 <td><?php echo $a1; ?></td>
                 <td><?php echo $b1; ?></td>
-                <td><?php echo !$a1; ?></td>
-                <td><?php echo "$a1 || $b1" ?></td>
-                <td><?php echo "$a1 && $b1" ?></td>
-                <td><?php echo "$a1 xor $b1" ?></td>
+                <td><?php var_dump(!$a1); ?></td>
+                <td><?php var_dump($a1 || $b1); ?></td>
+                <td><?php var_dump($a1 && $b1) ?></td>
+                <td><?php var_dump($a1 xor $b1) ?></td>
             </tr>
             <tr>
-                <td>0</td>
-                <td>1</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><?php echo $a2; ?></td>
+                <td><?php echo $b2; ?></td>
+                <td><?php var_dump(!$a2); ?></td>
+                <td><?php var_dump($a2 || $b2); ?></td>
+                <td><?php var_dump($a2 && $b2) ?></td>
+                <td><?php var_dump($a2 xor $b2) ?></td>
             </tr>
             <tr>
-                <td>1</td>
-                <td>0</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><?php echo $a3; ?></td>
+                <td><?php echo $b3; ?></td>
+                <td><?php var_dump(!$a3); ?></td>
+                <td><?php var_dump($a3 || $b3); ?></td>
+                <td><?php var_dump($a3 && $b3) ?></td>
+                <td><?php var_dump($a3 xor $b3) ?></td>
             </tr>
             <tr>
-                <td>1</td>
-                <td>1</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><?php echo $a4; ?></td>
+                <td><?php echo $b4; ?></td>
+                <td><?php var_dump(!$a4); ?></td>
+                <td><?php var_dump($a4 || $b4); ?></td>
+                <td><?php var_dump($a4 && $b4) ?></td>
+                <td><?php var_dump($a4 xor $b4) ?></td>
             </tr>
         </tbody>
     </table>
+
+    <div class="title">
+    <h2>Гибкое сравнение в PHP</h2>
+    </div>
+
 
     <div class="wrapper">
         <table style="table-layout: fixed; width: 900px; margin: auto;">
@@ -86,96 +104,100 @@ $b4 = 1;
             <tbody>
             <tr>
                 <td style="background-color: #f5f5f5;"><strong>true</strong></td>
-                <td><?php echo true == true?></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><?php var_dump($c1 == $c1);?></td>
+                <td><?php var_dump($c1 == $c2); ?></td>
+                <td><?php var_dump($c1 == $c3); ?></td>
+                <td><?php var_dump($c1 == $c4); ?></td>
+                <td><?php var_dump($c1 == $c5); ?></td>
+                <td><?php var_dump($c1 == $c6); ?></td>
+                <td><?php var_dump($c1 == $c7); ?></td>
+                <td><?php var_dump($c1 == $c8); ?></td>
             </tr>
             <tr>
                 <td style="background-color: #f5f5f5;"><strong>false</strong></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><?php var_dump($c2 == $c1);?></td>
+                <td><?php var_dump($c2 == $c2);?></td>
+                <td><?php var_dump($c2 == $c3);?></td>
+                <td><?php var_dump($c2 == $c4);?></td>
+                <td><?php var_dump($c2 == $c5);?></td>
+                <td><?php var_dump($c2 == $c6);?></td>
+                <td><?php var_dump($c2 == $c7);?></td>
+                <td><?php var_dump($c2 == $c8);?></td>
             </tr>
             <tr>
                 <td style="background-color: #f5f5f5;"><strong>1</strong></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><?php var_dump($c3 == $c1);?></td>
+                <td><?php var_dump($c3 == $c2);?></td>
+                <td><?php var_dump($c3 == $c3);?></td>
+                <td><?php var_dump($c3 == $c4);?></td>
+                <td><?php var_dump($c3 == $c5);?></td>
+                <td><?php var_dump($c3 == $c6);?></td>
+                <td><?php var_dump($c3 == $c7);?></td>
+                <td><?php var_dump($c3 == $c8);?></td>
             </tr>
             <tr>
                 <td style="background-color: #f5f5f5;"><strong>0</strong></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><?php var_dump($c4 == $c1);?></td>
+                <td><?php var_dump($c4 == $c2);?></td>
+                <td><?php var_dump($c4 == $c3);?></td>
+                <td><?php var_dump($c4 == $c4);?></td>
+                <td><?php var_dump($c4 == $c5);?></td>
+                <td><?php var_dump($c4 == $c6);?></td>
+                <td><?php var_dump($c4 == $c7);?></td>
+                <td><?php var_dump($c4 == $c8);?></td>
             </tr>
             <tr>
-                <td style="background-color: #f5f5f5;"><strong>-1</strong></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td style="background-color: #f5f5f5;"><strong>1</strong></td>
+                <td><?php var_dump($c5 == $c1);?></td>
+                <td><?php var_dump($c5 == $c2);?></td>
+                <td><?php var_dump($c5 == $c3);?></td>
+                <td><?php var_dump($c5 == $c4);?></td>
+                <td><?php var_dump($c5 == $c5);?></td>
+                <td><?php var_dump($c5 == $c6);?></td>
+                <td><?php var_dump($c5 == $c7);?></td>
+                <td><?php var_dump($c5 == $c8);?></td>
             </tr>
             <tr>
                 <td style="background-color: #f5f5f5;"><strong>"1"</strong></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><?php var_dump($c6 == $c1);?></td>
+                <td><?php var_dump($c6 == $c2);?></td>
+                <td><?php var_dump($c6 == $c3);?></td>
+                <td><?php var_dump($c6 == $c4);?></td>
+                <td><?php var_dump($c6 == $c5);?></td>
+                <td><?php var_dump($c6 == $c6);?></td>
+                <td><?php var_dump($c6 == $c7);?></td>
+                <td><?php var_dump($c6 == $c8);?></td>
             </tr>
             <tr>
                 <td style="background-color: #f5f5f5;"><strong>null</strong></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><?php var_dump($c7 == $c1);?></td>
+                <td><?php var_dump($c7 == $c2);?></td>
+                <td><?php var_dump($c7 == $c3);?></td>
+                <td><?php var_dump($c7 == $c4);?></td>
+                <td><?php var_dump($c7 == $c5);?></td>
+                <td><?php var_dump($c7 == $c6);?></td>
+                <td><?php var_dump($c7 == $c7);?></td>
+                <td><?php var_dump($c7 == $c8);?></td>
             </tr>
             <tr>
                 <td style="font-size: 16px; white-space: nowrap; background-color: #f5f5f5;"><strong>"php"</strong></td>
-                <td style="font-size: 16px; white-space: nowrap;"></td>
-                <td style="font-size: 16px; white-space: nowrap;"></td>
-                <td style="font-size: 16px; white-space: nowrap;"></td>
-                <td style="font-size: 16px; white-space: nowrap;"></td>
-                <td style="font-size: 16px; white-space: nowrap;"></td>
-                <td style="font-size: 16px; white-space: nowrap;"></td>
-                <td style="font-size: 16px; white-space: nowrap;"></td>
-                <td style="font-size: 16px; white-space: nowrap;"></td>
+                <td><?php var_dump($c8 == $c1);?></td>
+                <td><?php var_dump($c8 == $c2);?></td>
+                <td><?php var_dump($c8 == $c3);?></td>
+                <td><?php var_dump($c8 == $c4);?></td>
+                <td><?php var_dump($c8 == $c5);?></td>
+                <td><?php var_dump($c8 == $c6);?></td>
+                <td><?php var_dump($c8 == $c7);?></td>
+                <td><?php var_dump($c8 == $c8);?></td>
             </tr>
             </tbody>
         </table>
     </div>
 
+
+    <div class="title">
+        <h2>Жесткое сравнение в PHP</h2>
+    </div>
 
     <table style="table-layout: fixed; width: 900px; margin: auto;">
         <thead>
@@ -184,91 +206,91 @@ $b4 = 1;
         <tbody>
         <tr>
             <td style="background-color: #f5f5f5;"><strong>true</strong></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><?php var_dump($c1 === $c1);?></td>
+            <td><?php var_dump($c1 === $c2);?></td>
+            <td><?php var_dump($c1 === $c3);?></td>
+            <td><?php var_dump($c1 === $c4);?></td>
+            <td><?php var_dump($c1 === $c5);?></td>
+            <td><?php var_dump($c1 === $c6);?></td>
+            <td><?php var_dump($c1 === $c7);?></td>
+            <td><?php var_dump($c1 === $c8);?></td>
         </tr>
         <tr>
             <td style="background-color: #f5f5f5;"><strong>false</strong></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><?php var_dump($c2 === $c1);?></td>
+            <td><?php var_dump($c2 === $c2);?></td>
+            <td><?php var_dump($c2 === $c3);?></td>
+            <td><?php var_dump($c2 === $c4);?></td>
+            <td><?php var_dump($c2 === $c5);?></td>
+            <td><?php var_dump($c2 === $c6);?></td>
+            <td><?php var_dump($c2 === $c7);?></td>
+            <td><?php var_dump($c2 === $c8);?></td>
         </tr>
         <tr>
             <td style="background-color: #f5f5f5;"><strong>1</strong></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><?php var_dump($c3 === $c1);?></td>
+            <td><?php var_dump($c3 === $c2);?></td>
+            <td><?php var_dump($c3 === $c3);?></td>
+            <td><?php var_dump($c3 === $c4);?></td>
+            <td><?php var_dump($c3 === $c5);?></td>
+            <td><?php var_dump($c3 === $c6);?></td>
+            <td><?php var_dump($c3 === $c7);?></td>
+            <td><?php var_dump($c3 === $c8);?></td>
         </tr>
         <tr>
             <td style="background-color: #f5f5f5;"><strong>0</strong></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><?php var_dump($c4 === $c1);?></td>
+            <td><?php var_dump($c4 === $c2);?></td>
+            <td><?php var_dump($c4 === $c3);?></td>
+            <td><?php var_dump($c4 === $c4);?></td>
+            <td><?php var_dump($c4 === $c5);?></td>
+            <td><?php var_dump($c4 === $c6);?></td>
+            <td><?php var_dump($c4 === $c7);?></td>
+            <td><?php var_dump($c4 === $c8);?></td>
         </tr>
         <tr>
             <td style="background-color: #f5f5f5;"><strong>-1</strong></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><?php var_dump($c5 === $c1);?></td>
+            <td><?php var_dump($c5 === $c2);?></td>
+            <td><?php var_dump($c5 === $c3);?></td>
+            <td><?php var_dump($c5 === $c4);?></td>
+            <td><?php var_dump($c5 === $c5);?></td>
+            <td><?php var_dump($c5 === $c6);?></td>
+            <td><?php var_dump($c5 === $c7);?></td>
+            <td><?php var_dump($c5 === $c8);?></td>
         </tr>
         <tr>
             <td style="background-color: #f5f5f5;"><strong>"1"</strong></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><?php var_dump($c6 === $c1);?></td>
+            <td><?php var_dump($c6 === $c2);?></td>
+            <td><?php var_dump($c6 === $c3);?></td>
+            <td><?php var_dump($c6 === $c4);?></td>
+            <td><?php var_dump($c6 === $c5);?></td>
+            <td><?php var_dump($c6 === $c6);?></td>
+            <td><?php var_dump($c6 === $c7);?></td>
+            <td><?php var_dump($c6 === $c8);?></td>
         </tr>
         <tr>
             <td style="background-color: #f5f5f5;"><strong>null</strong></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><?php var_dump($c7 === $c1);?></td>
+            <td><?php var_dump($c7 === $c2);?></td>
+            <td><?php var_dump($c7 === $c3);?></td>
+            <td><?php var_dump($c7 === $c4);?></td>
+            <td><?php var_dump($c7 === $c5);?></td>
+            <td><?php var_dump($c7 === $c6);?></td>
+            <td><?php var_dump($c7 === $c7);?></td>
+            <td><?php var_dump($c7 === $c8);?></td>
         </tr>
         <tr>
             <td style="font-size: 16px; white-space: nowrap; background-color: #f5f5f5;"><strong>"php"</strong></td>
-            <td style="font-size: 16px; white-space: nowrap;"></td>
-            <td style="font-size: 16px; white-space: nowrap;"></td>
-            <td style="font-size: 16px; white-space: nowrap;"></td>
-            <td style="font-size: 16px; white-space: nowrap;"></td>
-            <td style="font-size: 16px; white-space: nowrap;"></td>
-            <td style="font-size: 16px; white-space: nowrap;"></td>
-            <td style="font-size: 16px; white-space: nowrap;"></td>
-            <td style="font-size: 16px; white-space: nowrap;"></td>
+            <td><?php var_dump($c8 === $c1);?></td>
+            <td><?php var_dump($c8 === $c2);?></td>
+            <td><?php var_dump($c8 === $c3);?></td>
+            <td><?php var_dump($c8 === $c4);?></td>
+            <td><?php var_dump($c8 === $c5);?></td>
+            <td><?php var_dump($c8 === $c6);?></td>
+            <td><?php var_dump($c8 === $c7);?></td>
+            <td><?php var_dump($c8 === $c8);?></td>
         </tr>
         </tbody>
     </table>
